@@ -19,6 +19,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript">
+	
+	
+	
 	function add_cart(goods_id) {
         // getElementById를 사용하여 <select> 요소를 선택합니다.
         var selectElement = document.getElementById("order_goods_qty");
@@ -29,33 +32,49 @@
         // 선택된 옵션의 값을 가져옵니다.
         var selectedValue = selectElement.options[selectedIndex].value;
         
-        
-		$.ajax({
-			type : "post",
-			async : false, //false인 경우 동기식으로 처리한다.
-			url : "${contextPath}/cart/addGoodsInCart.do",
-			data : {
-				goods_id:goods_id,
-				cart_goods_qty:selectedValue
-				
-			},
-			success : function(data, textStatus) {
-				//alert(data);
-			//	$('#message').append(data);
-				if(data.trim()=='add_success'){
-					alert("장바구니에 추가되었습니다.");	
-				}else if(data.trim()=='already_existed'){
-					alert("이미 카트에 등록된 상품입니다.");	
+    	var _isLogOn=document.getElementById("isLogOn");
+    	var isLogOn=_isLogOn.value;
+    	
+    	if(isLogOn=="false" || isLogOn=='' ){
+    	    var confirmation = confirm("로그인 후 주문이 가능합니다!!!\n로그인 페이지로 이동하시겠습니까?");
+    	    
+    	    if (confirmation) {
+    	        // 확인 버튼을 누른 경우 - 로그인 페이지로 이동
+    	        window.location.href = "${contextPath}/member/loginForm.do";
+    	    } else {
+    	        // 취소 버튼을 누른 경우 - 아무 작업 없음
+    	    }
+    		
+    	} else{
+        	
+			$.ajax({
+				type : "post",
+				async : false, //false인 경우 동기식으로 처리한다.
+				url : "${contextPath}/cart/addGoodsInCart.do",
+				data : {
+					goods_id:goods_id,
+					cart_goods_qty:selectedValue
+					
+				},
+				success : function(data, textStatus) {
+					//alert(data);
+				//	$('#message').append(data);
+					if(data.trim()=='add_success'){
+						alert("장바구니에 추가되었습니다.");	
+					}else if(data.trim()=='already_existed'){
+						alert("이미 카트에 등록된 상품입니다.");	
+					}
+					
+				},
+				error : function(data, textStatus) {
+					alert("에러 발생"+data);
+				},
+				complete : function(data, textStatus) {
+					//alert("작업을완료 했습니다");
 				}
-				
-			},
-			error : function(data, textStatus) {
-				alert("에러가 발생했습니다."+data);
-			},
-			complete : function(data, textStatus) {
-				//alert("작업을완료 했습니다");
-			}
-		}); //end ajax	
+			}); //end ajax	
+        }
+        
 	}
 	
 function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
