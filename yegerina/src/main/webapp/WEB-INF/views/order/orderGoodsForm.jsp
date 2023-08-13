@@ -604,9 +604,7 @@
 				var i_card_pay_month=document.getElementById("card_pay_month");
 				card_com_name=i_card_com_name.value;
 				card_pay_month=i_card_pay_month.value;
-				pay_method+="<br>"+
-					 		"카드사:"+card_com_name+"<br>"+
-					 		"할부개월수:"+card_pay_month;
+/* 				pay_method+=card_com_name;	 */			 		
 				pay_orderer_hp_num="해당없음";
 				
 				console.log(card_com_name);
@@ -657,8 +655,8 @@
 		console.log(i_address.value);
 		console.log(i_subaddress.value);
 		
-		delivery_address="우편번호:"+i_zipcode.value+"<br>"+
-							"[지번 주소:"+i_address.value+"]<br>"+
+		delivery_address=i_zipcode.value
+							+i_address.value+
 										i_subaddress.value;
 		
 							console.log(i_zipcode.value);

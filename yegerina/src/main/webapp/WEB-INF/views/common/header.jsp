@@ -116,6 +116,9 @@
                         <li><a href="#">공지사항</a></li>
                         <li><a href="#">Q & A</a></li>
                         <li><a href="#">REVIEW</a></li>
+                        <c:if test="${isLogOn==true and memberInfo.memberId =='admin' }">  
+	   	   					<li class=""><a href="${contextPath}/admin/goods/adminGoodsMain.do">관리자</a></li>
+	    				</c:if>
                     </ul>
                 </div>
             </nav>

@@ -59,7 +59,7 @@
                 <li class="best"><a href="#">Best 20</a></li>
             </ul>
         </nav>
-
+		<hr>
         <div class="all_list_container dpNone .fixed">
             <ul class="all_list">
                 <li class="Top" >

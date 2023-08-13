@@ -129,6 +129,7 @@ public class OrderControllerImpl extends BaseController implements OrderControll
 			                       HttpServletRequest request, HttpServletResponse response)  throws Exception{
 
 		String viewName=(String)request.getAttribute("viewName");
+		System.out.println(receiverMap.toString() + " : 받아온 최종 결제 정보");
 		ModelAndView mav = new ModelAndView(viewName);
 		
 		HttpSession session=request.getSession();

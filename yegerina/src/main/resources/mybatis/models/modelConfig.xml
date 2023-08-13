@@ -4,6 +4,12 @@
 
 <!-- MyBatis 구성 파일의 루트 요소 -->
 <configuration>
+
+
+	<settings> 
+	    <setting name="cacheEnabled" value="false" />
+	    <setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
 	
 	<!-- MyBatis 타입 별칭 설정 -->
 	<!-- type : 클래스의 전체 경로, alias : 클래스에 부여할 별칭을 설정 -->
