@@ -38,6 +38,7 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 			imageFileVO.setGoodsId(goodsId);
 		}
 		adminGoodsDAO.insertGoodsImageFile(imageFileList);
+		adminGoodsDAO.updateGoodsFileName(imageFileList);
 		return goodsId;
 	}
 	
@@ -45,10 +46,10 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 	
 	
 	@Override
-	public Map goodsDetail(int goods_id) throws Exception {
+	public Map goodsDetail(int goodsId) throws Exception {
 		Map goodsMap = new HashMap();
-		GoodsVO goodsVO=adminGoodsDAO.selectGoodsDetail(goods_id);
-		List imageFileList =adminGoodsDAO.selectGoodsImageFileList(goods_id);
+		GoodsVO goodsVO=adminGoodsDAO.selectGoodsDetail(goodsId);
+		List imageFileList =adminGoodsDAO.selectGoodsImageFileList(goodsId);
 		goodsMap.put("goods", goodsVO);
 		goodsMap.put("imageFileList", imageFileList);
 		return goodsMap;
@@ -70,8 +71,8 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 	}
 	
 	@Override
-	public void deleteGoods(int goods_id) throws Exception{
-		adminGoodsDAO.deleteGoods(goods_id);
+	public void deleteGoods(int goodsId) throws Exception{
+		adminGoodsDAO.deleteGoods(goodsId);
 	}
 	
 	@Override
@@ -80,10 +81,10 @@ public class AdminGoodsServiceImpl implements AdminGoodsService {
 	}
 
 	@Override
-	public void modifyGoods(String goods_id, Map newGoodsMap) throws Exception {
-		int goods_id_toInt = Integer.parseInt(goods_id);
+	public void modifyGoods(String goodsId, Map newGoodsMap) throws Exception {
+		int goods_id_toInt = Integer.parseInt(goodsId);
 
-		adminGoodsDAO.modifyGoods(goods_id, newGoodsMap);
+		adminGoodsDAO.modifyGoods(goodsId, newGoodsMap);
 		
 		ArrayList<ImageFileVO> imageFileList = (ArrayList) newGoodsMap.get("imageFileList");
 		for (ImageFileVO imageFileVO : imageFileList) {

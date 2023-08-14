@@ -1,11 +1,13 @@
 package com.jimini.yegerina.admin.goods.dao;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import org.springframework.dao.DataAccessException;
 
 import com.jimini.yegerina.goods.vo.GoodsVO;
+import com.jimini.yegerina.goods.vo.ImageFileVO;
 import com.jimini.yegerina.order.vo.OrderVO;
 
 public interface AdminGoodsDAO {
@@ -19,4 +21,5 @@ public interface AdminGoodsDAO {
 	public void  modifyImages(List imageFileList) throws Exception;
 	
 	public void deleteGoods(int goods_id);
+	public void updateGoodsFileName(ArrayList<ImageFileVO> imageFileList);
 }

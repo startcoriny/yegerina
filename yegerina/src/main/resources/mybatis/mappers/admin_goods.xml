@@ -89,5 +89,90 @@
 										   		 #{regId} )
 		]]>
 	</insert>	
+
+
+	<update id="updateGoodsFileName" parameterType="imageFileVO">
+	    <![CDATA[
+	        update T_SHOPPING_GOODS
+	        set goodsFileName = #{fileName}
+	        where goods_Id = #{goodsId}
+	    ]]>
+	</update>
+
+
+
+
+
+	
+	
+	
+	<!-- 상품삭제 - 상품정보 삭제 -->
+	<delete id="deleteGoods" parameterType="int">
+	    <![CDATA[
+	    delete from T_SHOPPING_GOODS where goods_id = #{goodsId}    
+    	]]>
+	</delete>
+
+
+	<!-- 상품삭제 - 이미지 삭제 -->
+	<delete id="deleteimages" parameterType="int">
+	    <![CDATA[   
+		delete from T_GOODS_DETAIL_IMAGE where goodsId = #{goodsId}
+    	]]>
+	</delete>
+	
+	
+	<select id="selectGoodsDetail" resultMap="goodsResult" parameterType="String">
+	    <![CDATA[
+		     select g.*,to_char(g.goodsCreDate,'YYYY-MM-DD') as goodsCreDate, d.fileName from T_SHOPPING_GOODS g, T_GOODS_DETAIL_IMAGE d
+	        where g.goods_id=d.goodsId
+	        and d.filetype='main_image'
+	        and g.goods_id=#{goodsId}
+	        order by g.goods_id
+    	]]>
+	</select>
+	
+	
+	<select id="selectGoodsImageFileList" resultMap="imageResult"
+		parameterType="String">
+	    <![CDATA[
+		    	select * from  T_GOODS_DETAIL_IMAGE 
+		    	where  
+			    goodsId=#{goodsId}
+			    order by imageId asc
+    	]]>
+	</select>	
+	
+	<!-- 상품수정 - 상품정보 -->
+	<update id="modifyGoods" parameterType="java.util.Map">
+
+	    <![CDATA[
+		   update T_SHOPPING_GOODS
+			set
+		                goods_sort = #{goodsSort},
+                    	goods_title = #{goodsTitle},
+                    	goods_writer_intro = #{goodsWriterIntro},
+						GOODS_SALES_PRICE = #{goodsSalesPrice},
+						goods_delivery_date = #{goodsDeliveryDate},
+						goods_status = #{goodsStatus}
+			where
+			goods_id= #{goodsId} 						
+					  			
+		]]>
+	</update>	
+	
+	
+	<!-- 상품수정 - 이미지 -->
+	<update id="modifyimages" parameterType="imageFileVO">
+	    <![CDATA[
+		   update T_GOODS_DETAIL_IMAGE
+			set					
+			fileType = #{fileType}
+			where
+			goodsId= #{goodsId} 
+			and fileName = #{fileName}
+		]]>
+	</update>	
+	
 	
 </mapper>

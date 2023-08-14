@@ -51,20 +51,35 @@ public class AdminGoodsDAOImpl implements AdminGoodsDAO {
 	}
 
 
+	
+	
 	@Override
-	public GoodsVO selectGoodsDetail(int goods_id) throws DataAccessException {
+	public GoodsVO selectGoodsDetail(int goodsId) throws DataAccessException {
 		GoodsVO goodsBean = new GoodsVO();
-		goodsBean = (GoodsVO) sqlSession.selectOne("mapper.admin.goods.selectGoodsDetail", goods_id);
+		goodsBean = (GoodsVO) sqlSession.selectOne("mapper.admin.goods.selectGoodsDetail", goodsId);
 		return goodsBean;
 	}
 
+	
+	
+	
+	
+	
+	
+	
 	@Override
-	public List selectGoodsImageFileList(int goods_id) throws DataAccessException {
+	public List selectGoodsImageFileList(int goodsId) throws DataAccessException {
 		List imageList = new ArrayList();
-		imageList = (List) sqlSession.selectList("mapper.admin.goods.selectGoodsImageFileList", goods_id);
+		imageList = (List) sqlSession.selectList("mapper.admin.goods.selectGoodsImageFileList", goodsId);
 		return imageList;
 	}
 
+	
+	
+	
+	
+	
+	
 	@Override
 	public List<OrderVO> selectOrderGoodsList(Map condMap) throws DataAccessException {
 		List<OrderVO> orderGoodsList = (ArrayList) sqlSession.selectList("mapper.admin.selectOrderGoodsList", condMap);
@@ -73,16 +88,20 @@ public class AdminGoodsDAOImpl implements AdminGoodsDAO {
 
 
 	@Override
-	public void deleteGoods(int goods_id) {
-		sqlSession.delete("mapper.admin.goods.deleteGoods", goods_id);
-		sqlSession.delete("mapper.admin.goods.deleteimages", goods_id);
+	public void deleteGoods(int goodsId) {
+		sqlSession.delete("mapper.admin.goods.deleteimages", goodsId);
+		sqlSession.delete("mapper.admin.goods.deleteGoods", goodsId);
 	}
 
 	@Override
-	public void modifyGoods(String goods_id, Map newGoodsMap) throws Exception {
+	public void modifyGoods(String goodsId, Map newGoodsMap) throws Exception {
 		sqlSession.insert("mapper.admin.goods.modifyGoods", newGoodsMap);
 	}
 
+	
+	
+	
+	
 	@Override
 	public void modifyImages(List imageFileList) throws Exception {
 		for (int i = 0; i < imageFileList.size(); i++) {
@@ -92,4 +111,20 @@ public class AdminGoodsDAOImpl implements AdminGoodsDAO {
 
 	}
 
+
+
+
+
+	@Override
+	public void updateGoodsFileName(ArrayList<ImageFileVO> imageFileList) {
+		for (int i = 0; i < imageFileList.size(); i++) {
+			ImageFileVO imageFileVO = (ImageFileVO) imageFileList.get(i);
+			sqlSession.insert("mapper.admin.goods.updateGoodsFileName", imageFileVO);
+		}
+		
+	}
+
+	
+	
+	
 }

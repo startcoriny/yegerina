@@ -76,14 +76,19 @@
 	}
 	//버튼식 상품조회 badge url에 따른 style변경
 	if (window.location.href.includes("fixedSearchPeriod")) {
-		const badges = document.querySelectorAll(".badge");
-		for (b of badges){ b.classList.remove("active1");}
-		//각 값이 url에 들어있을 경우 active된다.
-		if (window.location.href.includes("today")) {badges[0].classList.add("active1");
-		} else if (window.location.href.includes("one_month")) {badges[1].classList.add("active1");
-		}else if (window.location.href.includes("two_month")) {badges[2].classList.add("active1");
-		}else if (window.location.href.includes("three_month")) {badges[3].classList.add("active1");
-		}else if (window.location.href.includes("six_month")) {badges[4].classList.add("active1");
-		}
-	}
+	    const badges = document.querySelectorAll(".badge");
+	    badges.forEach(b => b.classList.remove("active1"));
+	    
+	    if (window.location.href.includes("today")) {
+	        badges[0].classList.add("active1");
+	    } else if (window.location.href.includes("one_month")) {
+	        badges[1].classList.add("active1");
+	    } else if (window.location.href.includes("two_month")) {
+	        badges[2].classList.add("active1");
+	    } else if (window.location.href.includes("three_month")) {
+	        badges[3].classList.add("active1");
+	    } else if (window.location.href.includes("six_month")) {
+	        badges[4].classList.add("active1");
+	    }
+}
 </script>

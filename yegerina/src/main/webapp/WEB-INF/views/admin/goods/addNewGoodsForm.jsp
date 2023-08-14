@@ -25,7 +25,7 @@
 				<td>카테고리</td>
 				<td>
 					<select name="goodsSort">								
-									<option value="TOP" selected="selected">TOP</option>
+									<option value="TOP">TOP</option>
 									<option value="Bottom">Bottom</option>
 									<option value="Outer">Outer</option>
 									<option value="Skirt">Skirt</option>
@@ -42,7 +42,38 @@
 				<td>상품종류</td>
 				<td>
 					<!-- <input type="text" placeholder="상품정보" name="goodsWriterIntro"> -->
-					<select id="TOP"   name="goodsWriterIntro">								
+					<select id="TOP-select"   name="goodsWriterIntro">								
+						<option value="티셔츠">티셔츠</option>
+						<option value="블라우스/셔츠">블라우스/셔츠</option>
+						<option value="니트">니트</option>
+						<option value="롱슬리브">롱슬리브</option>
+						<option value="후드티">후드티</option>
+						<option value="맨투맨">맨투맨</option>
+					</select>
+					<select id="Bottom-select" name="goodsWriterIntro">								
+						<option value="긴바지">긴바지</option>
+						<option value="반바지">반바지</option>
+						<option value="슬랙스">슬랙스</option>
+						<option value="레깅스">레깅스</option>
+						<option value="멜빵">멜빵</option>
+						<option value="츄리닝">츄리닝</option>
+					</select>
+					<select id="Outer-select" name="goodsWriterIntro">								
+						<option value="가디건">가디건</option>
+						<option value="점퍼">점퍼</option>
+						<option value="야상">야상</option>
+						<option value="코트">코트</option>
+						<option value="자켓">자켓</option>
+						<option value="패딩">패딩</option>
+					</select>
+					<select id="Skirt-select" name="goodsWriterIntro">								
+						<option value="롱치마">롱치마</option>
+						<option value="스커트">스커트</option>
+						<option value="원피스">원피스</option>
+
+					</select>
+					<input type="hidden" name="goodsWriterIntro">
+<!-- 					<select id="TOP"   name="goodsWriterIntro">								
 						<option value="티셔츠">티셔츠</option>
 						<option value="블라우스/셔츠">블라우스/셔츠</option>
 						<option value="니트">니트</option>
@@ -71,7 +102,7 @@
 						<option value="스커트">스커트</option>
 						<option value="원피스">원피스</option>
 
-					</select>
+					</select> -->
 				</td>
 			</tr>
 			<tr>
@@ -125,7 +156,7 @@
 	</form>
 </div>
 
-<script>
+<!-- <script>
 function updateGoodsWriterIntro() {
     var goodsSort = document.querySelector('select[name="goodsSort"]').value;
     var allSelects = document.querySelectorAll('select[name="goodsWriterIntro"]');
@@ -144,4 +175,37 @@ document.addEventListener('DOMContentLoaded', function() {
     
     document.querySelector('select[name="goodsSort"]').addEventListener('change', updateGoodsWriterIntro);
 });
+</script> -->
+
+<script>
+function updateGoodsWriterIntro() {
+    var goodsSort = document.querySelector('select[name="goodsSort"]').value;
+    var selectedOption = document.querySelector('#' + goodsSort + '-select option:checked');
+    var selectedValue = selectedOption.value;
+    
+    var hiddenInput = document.querySelector('input[name="goodsWriterIntro"]');
+    hiddenInput.value = selectedValue;
+    
+    var allSelects = document.querySelectorAll('[id$="-select"]');
+    
+    allSelects.forEach(function(select) {
+        if (select.id === goodsSort + "-select") {
+            select.style.display = 'block';
+        } else {
+            select.style.display = 'none';
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateGoodsWriterIntro();
+    
+    document.querySelector('select[name="goodsSort"]').addEventListener('change', updateGoodsWriterIntro);
+});
 </script>
+
+
+
+
+
+
