@@ -127,7 +127,26 @@
 		]]>
 	</update>	
 	
-	
+	<!-- 회원탈퇴 -->
+	<delete id="deleteMembercart" parameterType="String">
+	    <![CDATA[
+			delete T_SHOPPING_CART
+			where member_Id = #{memberId}
+    	]]>
+	</delete>	
+	<delete id="deleteMemberorder" parameterType="String">
+	    <![CDATA[
+			delete T_SHOPPING_ORDER
+			where member_Id = #{memberId}
+    	]]>
+	</delete>	
+	<!-- 회원탈퇴 -->
+	<delete id="deleteMember" parameterType="String">
+	    <![CDATA[
+			delete T_SHOPPING_MEMBER
+			where memberId = #{memberId}
+    	]]>
+	</delete>	
 	
 	
 	

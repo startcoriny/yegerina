@@ -18,4 +18,5 @@ public interface MyPageDAO {
 	public void updateMyOrderCancel(String order_id) throws DataAccessException;
 	public void updateMyOrderReturn(String order_id) throws DataAccessException;
 	public void updateMyOrderExchange(String order_id) throws DataAccessException;
+	void deleteMember(String memberId) throws DataAccessException;
 }

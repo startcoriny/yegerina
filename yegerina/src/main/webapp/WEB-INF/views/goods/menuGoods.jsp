@@ -20,37 +20,37 @@
 			<div class="categori_Title">
 				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=티셔츠" style="border: 1px solid;">티셔츠</a>
 				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=블라우스/셔츠" style="border: 1px solid;">블라우스/셔츠</a>
-				<a style="border: 1px solid;">니트</a>
-				<a style="border: 1px solid;">롱슬리브</a>
-				<a style="border: 1px solid;">후드티</a>
-				<a style="border: 1px solid;">맨투맨</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=니트" style="border: 1px solid;">니트</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=롱슬리브" style="border: 1px solid;">롱슬리브</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=후드티" style="border: 1px solid;">후드티</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=맨투맨" style="border: 1px solid;">맨투맨</a>
 			</div>	
 		</c:when>
 		<c:when test="${menuGoods=='Bottom'}">
 			<div class="categori_Title">
-				<a style="border: 1px solid;">긴바지</a>
-				<a style="border: 1px solid;">반바지</a>
-				<a style="border: 1px solid;">슬랙스</a>
-				<a style="border: 1px solid;">레깅스</a>
-				<a style="border: 1px solid;">멜빵</a>
-				<a style="border: 1px solid;">츄리닝</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=긴바지" style="border: 1px solid;">긴바지</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=반바지" style="border: 1px solid;">반바지</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=슬랙스" style="border: 1px solid;">슬랙스</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=레깅스" style="border: 1px solid;">레깅스</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=멜빵" style="border: 1px solid;">멜빵</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=츄리닝" style="border: 1px solid;">츄리닝</a>
 			</div>	
 		</c:when>
 		<c:when test="${menuGoods=='Outer'}">
 			<div class="categori_Title">
-				<a style="border: 1px solid;">가디건</a>
-				<a style="border: 1px solid;">점퍼</a>
-				<a style="border: 1px solid;">야상</a>
-				<a style="border: 1px solid;">코트</a>
-				<a style="border: 1px solid;">자켓</a>
-				<a style="border: 1px solid;">패딩</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=가디건" style="border: 1px solid;">가디건</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=점퍼" style="border: 1px solid;">점퍼</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=야상" style="border: 1px solid;">야상</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=코트" style="border: 1px solid;">코트</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=자켓" style="border: 1px solid;">자켓</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=패딩" style="border: 1px solid;">패딩</a>
 			</div>	
 		</c:when>
 		<c:when test="${menuGoods=='Skirt'}">
 			<div class="categori_Title">
-				<a style="border: 1px solid;">롱치마</a>
-				<a style="border: 1px solid;">스커트</a>
-				<a style="border: 1px solid;">원피스</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=롱치마" style="border: 1px solid;">롱치마</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=스커트" style="border: 1px solid;">스커트</a>
+				<a href="${contextPath}/goods/menuGoodsitem.do?menuGoodsitem=원피스" style="border: 1px solid;">원피스</a>
 			</div>	
 		</c:when>
 		<c:otherwise>

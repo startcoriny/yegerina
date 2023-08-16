@@ -148,7 +148,7 @@ public class AdminGoodsControllerImpl extends BaseController  implements AdminGo
 			throws Exception {
 		multipartRequest.setCharacterEncoding("utf-8");
 		response.setContentType("text/html; charset=UTF-8");
-		
+		System.out.println("상품추가 메서드 @@@@@@@@@@");
 		String imageFileName = null;
 		
 		//form 값을 받아 newGoodsMap에 put
@@ -167,8 +167,8 @@ public class AdminGoodsControllerImpl extends BaseController  implements AdminGo
 
 		//baseController upload
 		List<ImageFileVO> imageFileList = upload(multipartRequest);
-		System.out.println(imageFileList.toString() + " : 이미지 파일리스트");
-		System.out.println(imageFileList.get(1) + " : 이미지 파일리스트2");
+		System.out.println(imageFileList.toString() + " : 이미지 파일리스트@@@@@@@@@@@@@@@@@@@@@@@@@");
+		System.out.println(imageFileList.get(1) + " : 이미지 파일리스트2@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		//imageFileList를 받아 setReg_id해 newGoodsMap에 put
 		if (imageFileList != null && imageFileList.size() != 0) {
 			for (ImageFileVO imageFileVO : imageFileList) {

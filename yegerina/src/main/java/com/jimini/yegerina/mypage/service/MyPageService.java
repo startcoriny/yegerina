@@ -15,4 +15,5 @@ public interface MyPageService {
 	public MemberVO myDetailInfo(String member_id) throws Exception;
 	public void returnOrder(String order_id) throws Exception;
 	public void exchangeOrder(String order_id) throws Exception;
+	void deleteMember(String memberId) throws Exception;
 }

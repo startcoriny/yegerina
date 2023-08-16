@@ -36,7 +36,7 @@ public class GoodsServiceImpl implements GoodsService{
 		
 		System.out.println(goodsMap.toString() + " : 받아온 best20list");
 		
-		goodsList=goodsDAO.selectGoodsList("newItem");
+		goodsList=goodsDAO.selectGoodsListnewItem("newItem");
 		goodsMap.put("NEW_ITEM",goodsList);
 		// newItem이라는 문자열을 찾아서 goodsList에 모든 newItem을 담아 NEW_ITEM이라는 KEY값의 value로 Map으로 저장.
 		System.out.println(goodsMap.toString() + " : 받아온 NEW_ITEMlist");

@@ -29,6 +29,19 @@ public class GoodsDAOImpl  implements GoodsDAO{
 		return goodsList;
 	}
 
+	// 상품 리스트 정보
+	@Override
+	public List<GoodsVO> selectGoodsListnewItem(String goodsStatus) throws DataAccessException {
+		System.out.println(goodsStatus + " : 받아온 상품분류");
+		List<GoodsVO> goodsList=(ArrayList)sqlSession.selectList("mapper.goods.selectGoodsList_newItem",goodsStatus);
+		System.out.println(goodsList + " : 가져온 상품 정보 및 이미지");		
+		return goodsList;
+	}
+
+	
+	
+	
+	
 	// 카테고리별
 	@Override
 	public List<GoodsVO> selectGoodsByMenuGoods(String menuGoods) throws DataAccessException {
@@ -61,7 +74,7 @@ public class GoodsDAOImpl  implements GoodsDAO{
 	
 	
 	
-	// 상세페이지 이미지
+	// 상세페이지 디테일 이미지 가져오기
 	@Override
 	public List<ImageFileVO> selectGoodsDetailImage(String goods_id) throws DataAccessException {
 		System.out.println(goods_id + " : dao로 넘어온 GoodsdetailImage 아이디 정보");

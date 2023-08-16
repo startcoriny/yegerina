@@ -117,7 +117,14 @@
                         <li><a href="#">Q & A</a></li>
                         <li><a href="#">REVIEW</a></li>
                         <c:if test="${isLogOn==true and memberInfo.memberId =='admin' }">  
-	   	   					<li class=""><a href="${contextPath}/admin/goods/adminGoodsMain.do">관리자</a></li>
+	   	   					<li class="admin">
+	   	   						<a href="${contextPath}/admin/goods/adminGoodsMain.do">관리자</a>
+	   	   						<ul class="adminList">
+	   	   							<li><a href="${contextPath}/admin/goods/adminGoodsMain.do">상품관리</a></li>
+	   	   							<li><a href="${contextPath}/admin/member/adminMemberMain.do">회원관리</a></li>
+	   	   							<li><a href="${contextPath}/admin/order/adminOrderMain.do">주문관리</a></li>
+	   	   						</ul>
+	   	   					</li>
 	    				</c:if>
                     </ul>
                 </div>

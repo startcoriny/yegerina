@@ -14,23 +14,18 @@
 	<div class="slideshow-container">
 		<div class="mySlides fade">
 			<div class="numbertext"></div>
-			<img src="${contextPath }/resources/image/main_image_01.jpg" alt="">
+			<img src="${contextPath }/resources/image/main_images_01.gif" alt="">
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext"></div>
-			<img src="${contextPath }/resources/image/main_image_02.jpg" alt="">
+			<img src="${contextPath }/resources/image/main_images_02.jpg" alt="">
 		</div>
 		<div class="mySlides fade">
 			<div class="numbertext"></div>
-			<img src="${contextPath }/resources/image/main_image_03.jpg" alt="">
-		</div>
-		<div class="mySlides fade">
-			<div class="numbertext"></div>
-			<img src="${contextPath }/resources/image/main_image_04.jpg" alt="">
+			<img src="${contextPath }/resources/image/main_images_03.jpg" alt="">
 		</div>
 		<div>
 			<span class="dot"></span> <span class="dot"></span> <span class="dot"></span>
-			<span class="dot"></span>
 		</div>
 	</div>
 
@@ -89,8 +84,8 @@
 						<img width="121" height="154" src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}">
 						</a> 
 
-						<div class="title">${item.goodsTitle }</div>
-						<div class="price">
+						<div class="title" align="left" style="font-weight:500; font-size: 19px">${item.goodsTitle }</div>
+						<div class="price" align="left" style="font-weight: bold; font-size: 20px">
 							<fmt:formatNumber value="${item.goodsSalesPrice}" type="number"
 								var="goods_price" />
 							${goods_price}원

@@ -117,10 +117,10 @@ public class AdminGoodsDAOImpl implements AdminGoodsDAO {
 
 	@Override
 	public void updateGoodsFileName(ArrayList<ImageFileVO> imageFileList) {
-		for (int i = 0; i < imageFileList.size(); i++) {
-			ImageFileVO imageFileVO = (ImageFileVO) imageFileList.get(i);
+		
+			ImageFileVO imageFileVO = (ImageFileVO) imageFileList.get(0);
 			sqlSession.insert("mapper.admin.goods.updateGoodsFileName", imageFileVO);
-		}
+		
 		
 	}
 

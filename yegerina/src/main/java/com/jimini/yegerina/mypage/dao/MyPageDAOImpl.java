@@ -62,5 +62,13 @@ public class MyPageDAOImpl implements MyPageDAO{
 	public void updateMyOrderExchange(String orderId) throws DataAccessException{
 		sqlSession.update("mapper.mypage.updateMyOrderExchange",orderId);
 	}	
+	
+	
+	@Override
+	public void deleteMember(String memberId) throws DataAccessException {
+		sqlSession.delete("mapper.mypage.deleteMembercart",memberId);
+		sqlSession.delete("mapper.mypage.deleteMemberorder",memberId);
+		sqlSession.delete("mapper.mypage.deleteMember",memberId);
+	}
 
 }

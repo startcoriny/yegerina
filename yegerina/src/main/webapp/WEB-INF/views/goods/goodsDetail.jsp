@@ -230,13 +230,13 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 		
 			<!-- tab Caller -->
 			<ul class="detailinfolist_nav">
-				<li>
-					<a>
+				<li id="detailgoods_btn">
+					<a href="#" onclick="toggleDetail('detailInfo01')">
 						상품상세 
 					</a>
 				</li>
-				<li>
-					<a>
+				<li id="deliveryinfo_btn">
+					<a href="#" onclick="toggleDetail('detailInfo02')">
 						배송/교환/반품 안내
 					</a>
 				</li>
@@ -250,25 +250,54 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 				
 					<!-- 상세이미지 리스트 foreach로 뿌림 -->
 					<c:forEach var="image" items="${goodsMap.imageList }">
-							<img class="detailInfo_img" src="${contextPath}/download.do?goods_id=${goods.goodsId}&fileName=${image.fileName}">
-							${goods.goodsId}
-							${image.fileName}
+							<img style="height: 900px;" class="detailInfo_img" src="${contextPath}/download.do?goods_id=${goods.goodsId}&fileName=${image.fileName}">
 					</c:forEach>
-					<!-- 상세이미지 리스트 foreach로 뿌림 -->
+					<img style="height: 900px;" class="detailInfo_img" src="${contextPath}/download.do?goods_id=${goods.goodsId}&fileName=${goods.goodsFileName}">				
 				</div>
 
 				<!-- 상품/배송정보등의 외 정보 -->
-				<div>
+
+				<div id="detailInfo02" style="display: none;">
+					<img class="detailInfo_img " src="${contextPath }/resources/image/deliveryinfo01.png"><br>
+					<img style="height: 550px;" class="detailInfo_img " src="${contextPath }/resources/image/deliveryinfo02.png">
 									
 				</div>
-				<div id="detailInfo02">
-				<img class="detailInfo_img" src="${contextPath}/download.do?goods_id=${goods.goodsId}&fileName=${goods.goodsFileName}">				</div>
 				<!-- 상품/배송정보등의 외 정보 -->
 			</div>
 			<!-- tab 본문 -->
 
 		</div>
 		<!-- 하단 상품상세정보 -->
+
+
+
+<script type="text/javascript">
+
+	function toggleDetail(detailId) {
+	    var detailInfo01 = document.getElementById('detailInfo01');
+	    var detailInfo02 = document.getElementById('detailInfo02');
+	    var detailgoods_btn = document.getElementById('detailgoods_btn');
+	    var deliveryinfo_btn = document.getElementById('deliveryinfo_btn');
+	
+	    if (detailId === 'detailInfo01') {
+	        detailInfo01.style.display = 'block';
+	        detailgoods_btn.style.borderBottom = 'none';
+	        deliveryinfo_btn.style.borderBottom = '1px solid';
+	        detailInfo02.style.display = 'none';
+	    } else if (detailId === 'detailInfo02') {
+	        detailInfo01.style.display = 'none';
+	        detailgoods_btn.style.borderBottom = '1px solid';
+	        deliveryinfo_btn.style.borderBottom = 'none';
+	        detailInfo02.style.display = 'block';
+	    }
+	    
+	    
+	    event.preventDefault(); // 이벤트의 기본 동작 막기
+	}
+
+
+</script>
+
 
 </body>
 </html>

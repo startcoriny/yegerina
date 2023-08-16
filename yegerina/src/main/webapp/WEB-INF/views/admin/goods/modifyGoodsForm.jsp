@@ -29,35 +29,28 @@
 			<tr>
 				<td>상품소개</td>
 				<td>
-					<select id="TOP"   name="goodsWriterIntro">								
+					<select name="goodsWriterIntro">								
 						<option value="티셔츠">티셔츠</option>
 						<option value="블라우스/셔츠">블라우스/셔츠</option>
 						<option value="니트">니트</option>
 						<option value="롱슬리브">롱슬리브</option>
 						<option value="후드티">후드티</option>
-						<option value="맨투맨">맨투맨</option>
-					</select>
-					<select id="Bottom" name="goodsWriterIntro">								
+						<option value="맨투맨">맨투맨</option>							
 						<option value="긴바지">긴바지</option>
 						<option value="반바지">반바지</option>
 						<option value="슬랙스">슬랙스</option>
 						<option value="레깅스">레깅스</option>
 						<option value="멜빵">멜빵</option>
-						<option value="츄리닝">츄리닝</option>
-					</select>
-					<select id="Outer" name="goodsWriterIntro">								
+						<option value="츄리닝">츄리닝</option>							
 						<option value="가디건">가디건</option>
 						<option value="점퍼">점퍼</option>
 						<option value="야상">야상</option>
 						<option value="코트">코트</option>
 						<option value="자켓">자켓</option>
-						<option value="패딩">패딩</option>
-					</select>
-					<select id="Skirt" name="goodsWriterIntro">								
+						<option value="패딩">패딩</option>							
 						<option value="롱치마">롱치마</option>
 						<option value="스커트">스커트</option>
 						<option value="원피스">원피스</option>
-
 					</select>
 				</td>
 			</tr>
@@ -120,24 +113,6 @@
 
 
 <script>
-function updateGoodsWriterIntro() {
-    var goodsSort = document.querySelector('select[name="goodsSort"]').value;
-    var allSelects = document.querySelectorAll('select[name="goodsWriterIntro"]');
-    
-    allSelects.forEach(function(select) {
-        if (select.id === goodsSort) {
-            select.style.display = 'block';
-        } else {
-            select.style.display = 'none';
-        }
-    });
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-    updateGoodsWriterIntro();
-    
-    document.querySelector('select[name="goodsSort"]').addEventListener('change', updateGoodsWriterIntro);
-});
 
 
 function readURL(input,preview) {

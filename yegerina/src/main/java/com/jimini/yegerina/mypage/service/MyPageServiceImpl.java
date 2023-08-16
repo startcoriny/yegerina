@@ -65,4 +65,11 @@ public class MyPageServiceImpl  implements MyPageService{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	
+	
+	@Override
+	public void deleteMember(String memberId) throws Exception {
+		myPageDAO.deleteMember(memberId);
+	}
 }

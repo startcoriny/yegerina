@@ -22,5 +22,7 @@ public interface MyPageController {
 			throws Exception;
 	ModelAndView exchangeMyOrder(String order_id, HttpServletRequest request, HttpServletResponse response)
 			throws Exception;
+	ResponseEntity deleteMember(String member_id, HttpServletRequest request, HttpServletResponse response)
+			throws Exception;
 	
 }
