@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
+@RequestMapping(value="/popup")
 public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
@@ -35,5 +36,27 @@ public class HomeController {
 		
 		return "home";
 	}
+	
+	@RequestMapping(value = "showpopup.do", method = RequestMethod.GET)
+	public String showPopup(Locale locale, Model model) {
+		logger.info("Show popup");
+		
+		// 팝업 관련 처리를 수행
+		// 이 부분에 필요한 처리를 추가하시면 됩니다.
+
+		return "/popup/popupContent";
+	}	
+	@RequestMapping(value = "showpopup2.do", method = RequestMethod.GET)
+	public String showPopup2(Locale locale, Model model) {
+		logger.info("Show popup2");
+		
+		// 팝업 관련 처리를 수행
+		// 이 부분에 필요한 처리를 추가하시면 됩니다.
+		
+		return "/popup/popupContent2";
+	}	
+	
+	
+	
 	
 }
