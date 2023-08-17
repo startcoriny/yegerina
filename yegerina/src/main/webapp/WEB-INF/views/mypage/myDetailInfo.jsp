@@ -4,104 +4,84 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 
-<div class="myDetailcontainer">
-	<div class="">
-		<div class="">
-			<div class="">
-				<p class="">내정보</p>
 
-				<div class=""></div>
-				<div class="">
+
+<div class="myDetail_info_container">
+
+				<h3 align="left" style="margin: 30px;">회원 정보 수정</h3>
+
 					<form name="frm_mod_member">
-						<div id="detail_table">
-							<table class="">
+					<div class="">
+							<table class="mydetailinfo_table">
 							
 								<!-- 이름 -->
 								<tr>
 									<td class="" style="width: 200px;">이름</td>
-									<td class=""><input style="width: 200px;"
-										class="" name="memberName" type="text"
-										size="20" value="${memberInfo.memberName }" disabled /></td>
+									<td class=""><input style="width: 200px;" class="" name="memberName" type="text" size="20" value="${memberInfo.memberName }" disabled /></td>
 								</tr>
 								
 								<!-- 아이디 -->
 								<tr>
 									<td class="" style="width: 200px;">아이디</td>
-									<td class=""><input style="width: 200px;"
-										name="memberId" class="" type="text"
-										size="20" value="${memberInfo.memberId }" disabled /></td>
+									<td class=""><input style="width: 200px;" name="memberId" class="" type="text" size="20" value="${memberInfo.memberId }" disabled /></td>
 								</tr>
 								
 								<!-- 비밀번호 -->
 								<tr>
 									<td class="" style="width: 200px;">비밀번호</td>
-									<td class=""><input style="width: 200px;"
-										name="memberPw" class=""
-										type="password" size="20" value="${memberInfo.memberPw }" />
+									<td class=""><input style="width: 200px;" name="memberPw" class="" type="password" size="20" value="${memberInfo.memberPw }" />
 									</td>
 								</tr>
 								
 								<!-- 휴대폰번호 -->
 								<tr>
 									<td class="" style="width: 200px;">휴대폰번호</td>
-									<td class=""><input style="width: 200px;" type="text"
-										class="" name="hp1" size=4
-										value="${memberInfo.hp1 }"></td>
+									<td class=""><input style="width: 200px;" type="text" class="" name="hp1" size=4 value="${memberInfo.hp1 }"></td>
 								</tr>
 								<tr>
 									<td class="" style="width: 200px;">배송지</td>
 									<td class="">
-										<div class="" style="width: 395px;">
+										<div style="width: 395px; line-height: 80px;">
 											
 											<!-- 우편번호 -->
-											<input type="text" class=""
-												placeholder="우편번호" id="zipcode" name="zipcode" size=5
-												value="${memberInfo.zipcode }"> 
+											<input type="text"  placeholder="우편번호" id="zipcode" name="zipcode" size=5 style="margin-right: 10px;" value="${memberInfo.zipcode }"> 
 												
 											<!-- 다음 우편번호 검색 -->
-											<a class=""
-												href="javascript:execDaumPostcode()">우편번호검색</a>
+											<a href="javascript:execDaumPostcode()">우편번호검색</a>
 											<!-- 다음 우편번호 검색 -->
 											
 										</div> 
 										
-										<!-- 주소 -->
-										<input type="text" id="address"
-										class="" placeholder="주소"
-										name="address" size="50"
-										value="${memberInfo.address }"> 
-										
-										<!-- 상세주소 -->
-										<input
-										type="text" id="subaddress"
-										class="" name="subaddress"
-										size="50" value="${memberInfo.subaddress }">
+										<div style="width: 395px; line-height: 80px;">
+											<!-- 주소 -->
+											<input type="text" id="address" class="" placeholder="주소" name="address" size="50" value="${memberInfo.address }"> 
+											
+											<!-- 상세주소 -->
+											<input type="text" id="subaddress" class="" name="subaddress" size="50" value="${memberInfo.subaddress }">
+										</div>
 									</td>
 								</tr>
 							</table>
 						</div>
 
 						<!-- 수정 -->
-						<a href="javascript:fn_modify_member_info()"
-							class="">수정하기</a>
+						<a style="margin-left: 10px;" href="javascript:fn_modify_member_info()" class="mydetailinfo_table_btn">수정하기</a>
 
+						<div class="btn_container">
 						<!-- 취소, 클릭시  reload-->
 						<button type="button" onClick="location.reload()"
-							class="">취소하기</button>
+							class="cancelbtn">취소하기</button>
 
 						<!-- 탈퇴 -->
 						<button type="button"
 							onClick="fn_delete_member('${member_info.memberId }','Y')"
-							class="">탈퇴하기</button>
+							class="outmemberbtn">탈퇴하기</button>						
+						</div>
 
 					</form>
 				</div>
 
-			</div>
-		</div>
-	</div>
 	<input type="hidden" name="h_hp1" value="${memberInfo.hp1}" />
-</div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script>

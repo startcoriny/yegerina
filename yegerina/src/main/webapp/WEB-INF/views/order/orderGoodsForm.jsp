@@ -84,7 +84,7 @@
 						<tr class="orderInfoList">
 							<td style="border-right: none; width: 150px; text-align: center; line-height: 20px; display: flex; align-items: center; justify-content: center;">
 								<!-- 상품이미지 -->
-	 							<img src="${contextPath}/thumbnails.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" >
+	 							<img src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" >
 							    <input   type="hidden" id="h_goods_id" name="h_goods_id1" value="${item.goodsId }" />
 							    <input   type="hidden" id="h_goods_fileName" name="h_goods_fileName" value="${item.goodsFileName }" />
 							    <input   type="hidden" id="h_goods_title" name="h_goods_title" value="${item.goodsTitle }" />							

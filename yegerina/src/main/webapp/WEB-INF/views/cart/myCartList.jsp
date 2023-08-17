@@ -102,13 +102,13 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 					 		
 						 			<%-- 전체 --%>  
 									<td>
-										<input type="checkbox" name="checked_goods"  checked  value="${item.goodsId }"  onClick="calcGoodsPrice(${item.goodsSalesPrice },this)">
-										<input type="hidden" id="select_goods_qty" name="select_goods_qty" value="${cart_goods_qty }">
+										<input type="checkbox" name="checked_goods"  value="${item.goodsId }"  onClick="calcGoodsPrice(${cnt.index},${item.goodsSalesPrice},this)">
+										
 									</td>
 									<%-- 상품이미지 --%> 
 									<td class="goods_image">
 										<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goodsId }">
-											<img alt="" src="${contextPath}/thumbnails.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" />
+											<img alt="" src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" />
 											${item.goodsId }
 										</a>
 	
@@ -134,7 +134,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 							   			<strong>
 						            		${cart_goods_qty}개
 						         		</strong>
-						         		<input type="hidden" id="cart_goods_qty" name="cart_goods_qty" value="${cart_goods_qty}">									
+						         		<input type="hidden" id="cart_goods_qty${cnt.index}" name="cart_goods_qty" value="${cart_goods_qty}">									
 									</td>
 									
 									
@@ -165,9 +165,9 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 									</td>
 								
 								</tr>
-							<c:set  var="totalGoodsPrice" value="${totalGoodsPrice+ (item.goodsSalesPrice * cart_goods_qty)}" />
+<%-- 							<c:set  var="totalGoodsPrice" value="${totalGoodsPrice+ (item.goodsSalesPrice * cart_goods_qty)}" />
 							<c:set  var="totalGoodsNum" value="${totalGoodsNum + cart_goods_qty }" />
-							<c:set  var="totalDiscountedPrice" value="${totalDiscountedPrice + (item.goodsSalesPrice * cart_goods_qty)*0.1 }" />
+							<c:set  var="totalDiscountedPrice" value="${totalDiscountedPrice + (item.goodsSalesPrice * cart_goods_qty)*0.1 }" /> --%>
 		   					</c:forEach>
 		   				</form>
 			 	</c:otherwise>
@@ -186,7 +186,8 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	     	</tr>
 			<tr>
 				<td>
-			  		<p id="p_totalNum">${totalGoodsNum}개 </p>
+
+ 			  		<p id="p_totalNum">${totalGoodsNum}개 </p> 
 			  		<input id="h_totalNum"type="hidden" value="${totalGoodsNum}"  />
 				</td>
 	       		<td>
@@ -221,11 +222,11 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	</table>
 	
 	    <br><br>	
-		 <a href="javascript:fn_order_all_cart_goods()">
-		 주문하기
+		 <a class="orderbtn" href="javascript:fn_order_all_cart_goods()">
+		 	주문하기
 		 </a>
 		     
-		 <a href="${contextPath}/main/main.do">
+		 <a class="btn_home" href="${contextPath}/main/main.do">
 		 	쇼핑계속하기
 		 </a>
 
@@ -268,9 +269,10 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 	
 	
 	
-	function calcGoodsPrice(goodsSalesPrice,obj){
+	function calcGoodsPrice(index,goodsSalesPrice,obj){
 		var totalPrice,final_total_price,totalNum,totalSalesPrice = 0; 
-		var goods_qty=document.getElementById("select_goods_qty");
+		var goods_qty=document.getElementById("cart_goods_qty"+index); // 1
+		console.log(goods_qty.value);
 
 		var p_totalNum=document.getElementById("p_totalNum");
 		var p_totalPrice=document.getElementById("p_totalPrice");
@@ -293,7 +295,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 			totalSalesPrice=Number(h_totalSalesPrice.value)+Number((goods_qty.value*goodsSalesPrice)*0.1);
 
 			
-			final_total_price=totalPrice+Number(h_totalDelivery.value);
+			final_total_price=totalPrice+Number(h_totalDelivery.value)-totalSalesPrice;
 
 
 		}else{
@@ -309,7 +311,7 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 			totalSalesPrice=Number(h_totalSalesPrice.value)-Number((goods_qty.value*goodsSalesPrice)*0.1);
 			
 			
-			final_total_price=totalPrice-Number(h_totalDelivery.value);
+			final_total_price=totalPrice-totalSalesPrice;
 
 		}
 		
@@ -320,10 +322,10 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 		h_totalSalesPrice.value=totalSalesPrice;
 		h_final_total_price.value=final_total_price;
 		
-		p_totalNum.innerHTML=totalNum;
-		p_totalPrice.innerHTML=totalPrice;
-		p_totalSalesPrice.innerHTML=totalSalesPrice;
-		p_final_totalPrice.innerHTML=final_total_price;
+		p_totalNum.innerHTML=totalNum + "개";
+		p_totalPrice.innerHTML=totalPrice + "원";
+		p_totalSalesPrice.innerHTML=totalSalesPrice + "원";
+		p_final_totalPrice.innerHTML=final_total_price + "원";
 	}	
 	
 	

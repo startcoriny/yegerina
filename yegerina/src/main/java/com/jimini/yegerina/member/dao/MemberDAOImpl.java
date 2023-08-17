@@ -25,7 +25,7 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO login(Map loginMap) throws DataAccessException{
 		System.out.println(loginMap + " : memberDAO에 들어온 ID,PW");
 		System.out.println(loginMap.toString() + " : toString으로 확인한 DAO에 들어온 ID,PW");
-		System.out.println(loginMap.get("member_id") + " : 들어온 id확인(dao)");
+		System.out.println(loginMap.get("memberId") + " : 들어온 id확인(dao)");
 
 		MemberVO member=(MemberVO)sqlSession.selectOne("mapper.member.login",loginMap);
 		// mapper.member.login은 MyBatis의 네임스페이스와 SQL 매핑 구문의 ID, 해당 ID에 매핑된 SQL 문이 실행

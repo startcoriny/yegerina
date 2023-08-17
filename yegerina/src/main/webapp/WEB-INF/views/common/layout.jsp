@@ -50,7 +50,7 @@
 
 
     <!-- mainpage.js의 스크립트 포함 -->
-    <script>
+<script>
  // mainpage.js
     function openPopup() {
         // 쿠키를 이용하여 7일간 팝업을 띄우지 않기 여부 확인
@@ -105,7 +105,11 @@
     window.onload = function() {
         openPopup();
     };
-    </script>
+    
+
+    
+    
+</script>
 
 
 </body>

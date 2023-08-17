@@ -95,7 +95,7 @@
 													
 													<td>
 														<!-- 상품이미지 -->
-														<img src="${contextPath}/thumbnails.do?goods_id=${item2.goodsId}&fileName=${item2.goodsFileName}" style="width: 64px; height: 64px">
+														<img src="${contextPath}/download.do?goods_id=${item2.goodsId}&fileName=${item2.goodsFileName}" style="width: 64px; height: 64px">
 														<!-- 상품이미지 -->
 													</td>
 													
@@ -215,7 +215,7 @@
 								    <tr>
 								        <td>
 								            <!-- 상품 이미지 -->
-								            <img src="${contextPath}/thumbnails.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" style="width: 64px; height: 64px">
+								            <img src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" style="width: 64px; height: 64px">
 								            <!-- 상품 이미지 -->
 								        </td>
 								        <td>

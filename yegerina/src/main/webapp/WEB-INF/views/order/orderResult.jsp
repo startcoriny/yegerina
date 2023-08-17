@@ -29,7 +29,7 @@
 					<td style="width: 30px; text-align: center;">${item.orderId }</td>
 					<td style="width: 50px; height: 70px;">
 						<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goodsId }">
-							<img style="width: 50px; height: 50px;" src="${contextPath}/thumbnails.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" >
+							<img style="width: 50px; height: 50px;" src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" >
 						</a> <br>
 						
 					</td>

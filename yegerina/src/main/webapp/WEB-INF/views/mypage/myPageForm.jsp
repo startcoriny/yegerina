@@ -2,6 +2,13 @@
 	pageEncoding="utf-8" isELIgnored="false"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+
+
+<c:set var="cartCount" value="${sessionScope.cartCount}" /> <!-- 장바구니 -->
+<c:set var="deliveringCount" value="${sessionScope.deliveringCount}" /> <!-- 배송중 -->
+<c:set var="paycomplete" value="${sessionScope.paycomplete}" /> <!-- 결제완료 -->
+<c:set var="Purchase_completed" value="${sessionScope.Purchase_completed}" /> <!-- 구매확정 -->
+
 <body>
 <head>
 
@@ -22,28 +29,28 @@
       
       <div class="item">
         <div>
-          <div class="green number">0</div>
+          <div class="green number">${cartCount }</div>
           <div class="mypageText">장바구니</div>
         </div>
         <div class="icon"> > </div>
       </div>     
       <div class="item">
         <div>
-          <div class="number">0</div>
+          <div class="number">${paycomplete }</div>
           <div class="mypageText">결제완료</div>
         </div>
         <div class="icon"> > </div>
       </div>     
       <div class="item">
         <div>
-          <div class="green number">0</div>
+          <div class="green number">${deliveringCount }</div>
           <div class="mypageText">배송중</div>
         </div>
         <div class="icon"> > </div>
       </div>     
       <div class="item">
         <div>
-          <div class="green number">0</div>
+          <div class="green number">${Purchase_completed }</div>
           <div class="mypageText">구매확정</div>
         </div>
       </div>     
