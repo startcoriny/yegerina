@@ -3,6 +3,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
+<c:set var="ordersLen" value="${sessionScope.ordersLen}" /> <!-- 총회원수 -->
+
+
 <!-- order_goods_list에 데이터가 있을때 -->
 <c:choose>
 	<c:when test='${not empty order_goods_list}'>
@@ -40,6 +43,8 @@
 		<a href="javascript:search_order_history('two_month')" class="badge">2개월</a>
 		<a href="javascript:search_order_history('three_month')" class="badge">3개월</a>
 		<a href="javascript:search_order_history('six_month')" class="badge">6개월</a>
+		<span>총 주문건 : ${ordersLen }</span>
+		
 	</div>
 
 	<div>

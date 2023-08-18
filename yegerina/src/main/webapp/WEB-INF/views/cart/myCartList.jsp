@@ -109,7 +109,6 @@ function fn_order_each_goods(goods_id,goods_title,goods_sales_price,fileName){
 									<td class="goods_image">
 										<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goodsId }">
 											<img alt="" src="${contextPath}/download.do?goods_id=${item.goodsId}&fileName=${item.goodsFileName}" />
-											${item.goodsId }
 										</a>
 	
 									</td>

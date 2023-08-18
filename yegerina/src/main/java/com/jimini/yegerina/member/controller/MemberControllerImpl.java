@@ -214,7 +214,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		}catch(Exception e) {
 			// 에러가 났을 경우 회원가입페이지로 리다이렉트
 			message  = "<script>";
-		    message +=" alert('작업 중 오류가 발생했습니다. 다시 시도해 주세요');";
+		    message +=" alert('아이디, 비밀번호의 조건이 안맞거나 입력되지 않은 곳이 있습니다. \\n다시 입력해주세요');";
 		    message += " location.href='"+request.getContextPath()+"/member/memberForm.do';";
 		    message += " </script>";
 			e.printStackTrace();

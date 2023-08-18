@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
-
+<c:set var="membersLen" value="${sessionScope.membersLen}" /> <!-- 총회원수 -->
 
 
 <div class="detail_box">
@@ -16,6 +16,7 @@
 			<a href="javascript:search_order_history('two_month')" class="badge">2개월</a> 
 			<a href="javascript:search_order_history('three_month')" class="badge">3개월</a> 
 			<a href="javascript:search_order_history('six_month')" class="badge">6개월</a>
+			<span>회원수 : ${membersLen }</span>
 		</div>
 
 		<div>

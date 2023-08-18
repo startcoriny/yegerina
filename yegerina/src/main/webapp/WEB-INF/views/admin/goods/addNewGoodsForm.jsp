@@ -18,7 +18,7 @@
 
 
 <div class="detail_box goods_form">
-	<h2>상품추가</h2>
+	<h2 style="margin: 30px auto;">상품추가</h2>
 	<form name="frm_modify_goods" method="post" enctype="multipart/form-data">
 		<table>
 			<tr>

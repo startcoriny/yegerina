@@ -60,7 +60,7 @@
 					
 					<table id="orderListHistory">
 						<tr>
-							<td class="tdtd">이미지</td>
+							<td class="tdtd"></td>
 							<td class="tdtd">상품정보</td>
 							<td>주문금액(수량)</td>
 							<td>주문일자</td>

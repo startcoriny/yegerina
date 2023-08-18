@@ -1103,21 +1103,23 @@ div{
 
 .wrap{
   background-color: #F8F8F8;  
+
+  margin: 30px auto;
+  height: 600px;
 }
 /* 녹색배경 */
 .greenContainer{  
   height: 132px;
-  background-color: #dbffca;    
-  opacity: .4;
+  background-color: #ffffff;    
   display: flex;
-  align-items: flex-end;
+  line-height: 100px;
   padding: 16px;
 }
 
 .greenContainer .name{
-   font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
-  color: #ff80ff;
+  color: black;
 } 
 
 /* ================== 주문/배송조회 박스 시작 ==================== */
@@ -1426,6 +1428,18 @@ div{
 
 #admin_member button {
 	height: 25px;
+}
+
+
+#admin_member>div:first-of-type span,
+#admin_order>div:first-of-type span{
+    width: 150px;
+    line-height: 50px;
+	text-align : center;
+    float: right;
+    background-color: #cccca8;
+    color: #443838;
+	font-weight: 600;
 }
 
 

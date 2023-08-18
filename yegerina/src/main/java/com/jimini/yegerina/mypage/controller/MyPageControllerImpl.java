@@ -69,7 +69,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		ModelAndView mav = new ModelAndView();
 		myPageService.cancelOrder(orderId);
 		mav.addObject("message", "cancel_order");
-		mav.setViewName("redirect:/mypage/myPageForm.do");
+		mav.setViewName("redirect:/mypage/listMyOrderHistory.do");
 		return mav;
 	}
 
@@ -83,7 +83,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		//주문 id order_id로 db삭제 후 returning_goods message 리턴
 		myPageService.returnOrder(orderId);
 		mav.addObject("message", "returning_goods");
-		mav.setViewName("redirect:/mypage/myPageForm.do");
+		mav.setViewName("redirect:/mypage/listMyOrderHistory.do");
 		return mav;
 	}
 	
@@ -96,7 +96,7 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		//주문 id order_id로 db삭제 후 exchange_goods message 리턴
 		myPageService.exchangeOrder(orderId);
 		mav.addObject("message", "exchange_goods");
-		mav.setViewName("redirect:/mypage/myPageForm.do");
+		mav.setViewName("redirect:/mypage/listMyOrderHistory.do");
 		return mav;
 	}
 	

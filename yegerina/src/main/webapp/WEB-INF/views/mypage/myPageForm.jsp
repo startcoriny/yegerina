@@ -17,7 +17,7 @@
 <div class="wrap">
   <div class="greenContainer">
     <div>
-      <div class="name">장바구니</div>
+      <div class="name">마이페이지</div>
     </div>  
   </div>
   
