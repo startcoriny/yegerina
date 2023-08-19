@@ -5,6 +5,7 @@
 <%@ taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath"  value="${pageContext.request.contextPath}" />
+<c:set var="cartCount" value="${sessionScope.cartCount}" /> <!-- 장바구니 -->
 
 <script type="text/javascript">
 	var loopSearch=true;
@@ -68,6 +69,12 @@
 		  element.style.display = 'none';
 	   }
 	}
+ 	
+ 	
+ 	function showLoginAlert() {
+ 	    alert("로그인이 필요한 서비스입니다. 로그인 페이지로 이동합니다.");
+ 	    window.location.href = "${contextPath }/member/loginForm.do";
+ 	}
 </script>
 
         <div class="container">
@@ -82,15 +89,23 @@
                     	<c:choose>
                     		<c:when test="${isLogOn==true and not empty memberInfo }">
                     			<li><a href="${contextPath }/member/logout.do" >로그아웃</a></li>                    		
+		                        <li style="position: relative;">
+			                        <a href="${contextPath}/cart/myCartList.do">
+			                        	<img alt="cart" src="${contextPath }/resources/image/cart_icon.png" width="40px" height="40px">
+			                        </a>
+			                        <div class="cartCountimage">${cartCount }</div>
+		                        </li>
+		                        <li><a href="${contextPath }/mypage/listMyOrderHistory.do">ORDER</a></li>
+		                        <li><a href="${contextPath }/mypage/myPageForm.do">My Page</a></li>
                     		</c:when>
                     		<c:otherwise>
                     			<li><a href="${contextPath }/member/loginForm.do" >Login</a></li> 
 		                        <li><a href="${contextPath }/member/memberForm.do">Join us</a></li>                    		
+		                        <li><a href="javascript:showLoginAlert()"><img alt="cart" src="${contextPath }/resources/image/cart_icon.png" width="40px" height="40px"></a></li>
+		                        <li><a href="javascript:showLoginAlert()">ORDER</a></li>
+		                        <li><a href="javascript:showLoginAlert()">My Page</a></li>
                     		</c:otherwise>
                     	</c:choose>
-                        <li><a href="${contextPath}/cart/myCartList.do" onclick=""><img alt="cart" src="${contextPath }/resources/image/cart_icon.png" width="40px" height="40px"></a></li>
-                        <li><a href="${contextPath }/mypage/listMyOrderHistory.do">ORDER</a></li>
-                        <li><a href="${contextPath }/mypage/myPageForm.do">My Page</a></li>
                     </ul>
                 </div>
                 

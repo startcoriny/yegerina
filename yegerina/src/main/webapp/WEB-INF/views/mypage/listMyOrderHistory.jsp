@@ -73,144 +73,14 @@
 							<c:when test="${empty myOrderHistList }">
 								<tr>
 									<!-- 주문상품이 없을때 -->
-									<td>
-										<div>
-											<p>주문한 상품이 없습니다.</p>
-										</div>
+									<td colspan=8 class="menuexplain">
+											<strong>주문한 상품이 없습니다.</strong>
 									</td>
 									<!-- 주문상품이 없을때 -->
 								</tr>
 							</c:when>
 	
-							<c:otherwise>
-							<!-- 주문상품이 있을때 for문 -->
-								<%-- <c:forEach var="item" items="${myOrderHistList }" varStatus="i">
-									<!-- 주문상품 -->
-									<c:choose>
-										<c:when test="${item.orderId != pre_order_id }">
-											<c:set var="pre_order_id" value="${item.orderId }" />
-											<c:forEach var="item2" items="${myOrderHistList}" varStatus="j">
-												<tr>
-												<c:if test="${item.orderId ==item2.orderId}">
-													
-													<td>
-														<!-- 상품이미지 -->
-														<img src="${contextPath}/download.do?goods_id=${item2.goodsId}&fileName=${item2.goodsFileName}" style="width: 64px; height: 64px">
-														<!-- 상품이미지 -->
-													</td>
-													
-													<td>	
-														<p>
-														<!-- 상품명 -->
-															<a href="${contextPath}/goods/goodsDetail.do?goods_id=${item2.goodsId }">${item2.goodsTitle}</a>
-														<!-- 상품명 -->
-														</p>
-													</td>	
-
-
-													<td>
-														<p>
-														<!-- 주문갯수 -->
-															<span>${item2.orderGoodsQty}</span>개
-															<span> · </span> 
-															<span>																		
-															<!-- 상품가격 * 갯수 : 총 구매가격 -->
-																<fmt:formatNumber value="${(item2.goodsSalesPrice*item2.orderGoodsQty)*0.9}" pattern="#,###" />
-															</span> 원
-														</p>
-													</td>
-												</c:if>
-												
-												<td>
-													<p>${item.pay_order_time }주문</p>										
-												</td>
-												
-												<td>
-													<div>
-														<p>${item.orderId }</p>
-													</div>
-												</td>
-												
-												<td>
-													<div>
-														<p>
-															<!-- 배송정보에 따른 표시 -->
-															<c:choose>
-																<c:when test="${item.delivery_state=='delivery_prepared' }">배송준비중</c:when>
-																<c:when test="${item.delivery_state=='delivering' }">배송중</c:when>
-																<c:when test="${item.delivery_state=='finished_delivering' }">배송완료</c:when>
-																<c:when test="${item.delivery_state=='cancel_order' }">주문취소완료</c:when>
-																<c:when test="${item.delivery_state=='returning_goods' }">반품중</c:when>
-																<c:when test="${item.delivery_state=='exchange_goods' }">교환중</c:when>
-															</c:choose>
-															<!-- 배송정보에 따른 표시 -->
-														</p>
-													</div>
-												</td>
-												<td>	
-												<c:choose>
-													
-														
-														<c:when test="${item.delivery_state=='cancel_order'}">
-														</c:when>
-														<c:when test="${item.delivery_state=='returning_goods'}">
-														</c:when>
-														<c:when test="${item.delivery_state=='exchange_goods'}">
-														</c:when>
-														<c:when test="${item.delivery_state=='delivering'}">
-														</c:when>
-														
-														<c:otherwise>
-															<div>
-																<div>
-																	<c:choose>
-	
-																		<c:when test="${item.delivery_state=='null'}">
-																			<!-- 배송준비완료일때 -->
-																			<button onClick="fn_edit_order('${item.orderId}','cancel')" style="width: 150px;">
-																				주문취소
-																			</button>
-																			<!-- 배송준비완료일때 -->
-																		</c:when>
-																		<c:when test="${item.delivery_state=='delivery_prepared'}">
-																			<!-- 배송준비완료일때 -->
-																			<button onClick="fn_edit_order('${item.orderId}','cancel')" style="width: 150px;">
-																				주문취소
-																			</button>
-																			<!-- 배송준비완료일때 -->
-																		</c:when>
-	
-																		<c:when test="${item.delivery_state=='finished_delivering' }">
-																			<!-- 배송완료 일때 -->
-																			<button onClick="fn_edit_order('${item.orderId}', 'exchange')"style="width: 150px;">
-																				교환신청
-																			</button>
-																			<button onClick="fn_edit_order('${item.orderId}','return')" style="width: 150px;">
-																				반품신청
-																			</button>
-																				<!-- 배송완료 일때 -->
-																		</c:when>
-	
-																	</c:choose>
-																</div>
-															</div>
-														</c:otherwise>
-													</c:choose>
-												</td>
-											</tr>
-											</c:forEach>
-										
-											
-										</c:when>
-									</c:choose>									
-								
-								</c:forEach> --%>
-							<!-- 주문상품이 있을때 for문 -->
-							
-							
-							
-							
-							
+							<c:otherwise>		
 								<c:forEach var="item" items="${myOrderHistList}" varStatus="i">
 								    <tr>
 								        <td>

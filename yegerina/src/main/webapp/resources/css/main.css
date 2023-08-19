@@ -83,6 +83,18 @@ header h2{
 /*     background: url(/yegerina2/resources/image/yegerina.jpg) no-repeat 0/300px;
  */}
 
+/* 장바구니갯수아이콘 */
+.cartCountimage{
+	display: inline-block;
+    background-color: #767676;
+    color: white;
+    width: 20px;
+    border-radius: 100%;
+    line-height: 21px;
+    position: absolute;
+    right: 24px;	
+}
+
 
 #search{
  	position: relative;
