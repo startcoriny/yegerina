@@ -61,6 +61,7 @@
 				//	$('#message').append(data);
 					if(data.trim()=='add_success'){
 						alert("장바구니에 추가되었습니다.");	
+						location.reload();
 					}else if(data.trim()=='already_existed'){
 						alert("이미 카트에 등록된 상품입니다.");	
 					}

@@ -3,10 +3,15 @@ package com.jimini.yegerina.mypage.service;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jimini.yegerina.member.vo.MemberVO;
 import com.jimini.yegerina.mypage.dao.MyPageDAO;
@@ -72,4 +77,16 @@ public class MyPageServiceImpl  implements MyPageService{
 	public void deleteMember(String memberId) throws Exception {
 		myPageDAO.deleteMember(memberId);
 	}
+	
+	
+	public List orderdetail(String orderId)  throws Exception{
+			
+		List receiverMap =  myPageDAO.orderdetail(orderId);
+		System.out.println("@@@@@마이페이지DAO에서 넘어온 주문자 상세 정보"+receiverMap.toString());
+		return receiverMap;
+		
+	}
+	
+	
+	
 }

@@ -91,8 +91,11 @@
 								        <td>
 								            <p>
 								                <!-- 상품명 -->
-								                <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goodsId}">${item.goodsTitle}</a>
+								                <a href="${contextPath}/mypage/orderdetail.do?orderId=${item.orderId}">${item.goodsTitle}</a>
 								                <!-- 상품명 -->
+<%-- 								                <!-- 상품명 -->
+								                <a href="${contextPath}/goods/goodsDetail.do?goods_id=${item.goodsId}">${item.goodsTitle}</a>
+								                <!-- 상품명 --> --%>
 								            </p>
 								        </td>
 								        <td>

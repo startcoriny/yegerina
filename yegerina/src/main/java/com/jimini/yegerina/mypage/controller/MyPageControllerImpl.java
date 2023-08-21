@@ -201,5 +201,30 @@ public class MyPageControllerImpl extends BaseController  implements MyPageContr
 		return resEntity;
 	}
 
+
+	
+	
+	
+	// 내주문 상세페이지
+	@RequestMapping(value= {"/orderdetail.do"} ,method = RequestMethod.GET)
+	public ModelAndView orderdetail(@RequestParam("orderId") String orderId,
+			HttpServletRequest request, HttpServletResponse response)  throws Exception{
+			
+		String viewName=(String)request.getAttribute("viewName");
+		ModelAndView mav = new ModelAndView(viewName);
+		HttpSession session=request.getSession();
+		MemberVO orderer=(MemberVO)session.getAttribute("memberInfo");
+		
+		List<OrderVO> myOrderList = myPageService.orderdetail(orderId);
+		System.out.println("@@@@@마이페이지서비스에서 넘어온 주문자 상세 정보"+myOrderList.toString());
+		mav.addObject("myOrderList",myOrderList);//OrderVO로 주문결과 페이지에  주문자 정보를 표시한다.
+		mav.addObject("orderer", orderer);
+		
+		
+		return mav;
+		
+	}
+	
+	
 	
 }

@@ -71,4 +71,14 @@ public class MyPageDAOImpl implements MyPageDAO{
 		sqlSession.delete("mapper.mypage.deleteMember",memberId);
 	}
 
+	
+	
+	public List orderdetail(String orderId) throws DataAccessException {
+	    System.out.println("들어갈 주문상품 번호: " + orderId);
+	    List orderDetails = sqlSession.selectList("mapper.mypage.orderdetail", orderId);
+	    System.out.println("받아온 주문디테일 정보 : " + orderDetails.toString());
+	    return orderDetails;
+	}
+
+	
 }

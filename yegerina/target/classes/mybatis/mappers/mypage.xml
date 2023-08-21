@@ -53,6 +53,15 @@
 	</select>	
 
 
+	<!-- 회원이 주문한 상품의 상세 정보 조회하는 sql 쿼리문 -->
+	<select id="orderdetail" resultMap="orderGoodsResult"  parameterType="int"  >
+		<![CDATA[
+			select * from t_shopping_order
+            where order_id=#{orderId}
+		]]>
+	</select>	
+
+
 
 
 	<!-- 회원 정보를 수정하기 위한 sql 쿼리문 -->

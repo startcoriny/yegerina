@@ -13,7 +13,7 @@
 </head>
 <body>
 
-    <form class="join_us" name="join_us" action="${contextPath}/member/addMember.do" method="post">
+    <form class="join_us" name="join_us" action="${contextPath}/member/addMember.do" method="post" onsubmit="return validateForm()">
         <h3 style="margin: 70px 0px 20px 0px;">회원가입</h3>
 
         <table class="outLoginTable">
@@ -209,6 +209,19 @@
 				document.getElementById('address').value = data.address;
 			}
 		}).open();
+	}
+	
+	
+	
+	function validateForm() {
+	    var password = document.forms["join_us"]["memberPw"].value;
+	    var address = document.forms["join_us"]["address"].value;
+	    var phone = document.forms["join_us"]["hp1"].value;
+	    
+	    if (password === "" || address === "" || phone === "") {
+	        alert("아이디, 비밀번호, 핸드폰번호, 주소를 모두 입력해주세요.");
+	        return false; // 폼 전송을 막음
+	    }
 	}
 </script>
 </body>

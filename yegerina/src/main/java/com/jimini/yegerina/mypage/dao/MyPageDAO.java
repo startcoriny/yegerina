@@ -3,7 +3,11 @@ package com.jimini.yegerina.mypage.dao;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.dao.DataAccessException;
+import org.springframework.web.servlet.ModelAndView;
 
 import com.jimini.yegerina.member.vo.MemberVO;
 import com.jimini.yegerina.order.vo.OrderVO;
@@ -19,4 +23,6 @@ public interface MyPageDAO {
 	public void updateMyOrderReturn(String order_id) throws DataAccessException;
 	public void updateMyOrderExchange(String order_id) throws DataAccessException;
 	void deleteMember(String memberId) throws DataAccessException;
+
+	public List orderdetail(String orderId)  throws DataAccessException;
 }
