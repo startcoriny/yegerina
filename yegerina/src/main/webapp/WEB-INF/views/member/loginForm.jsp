@@ -15,28 +15,22 @@
 <!-- JSTL (JavaServer Pages Standard Tag Library)의 Core 태그 라이브러리 -->
 <c:set var="contextPath" value="${pageContext.request.contextPath}" />
 
-<!DOCTYPE html >
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-</head>
-<body>
 
 <!-- 컨트롤러에서 메세지가 담겨져서 왔다면 함수 실행 -->
 <!-- window.onload - 웹 페이지의 모든 리소스가 로드되고 준비되었을 때 실행되는 JavaScript 이벤트 핸들러 -->
 <c:if test='${not empty message }'>
-<script>
-window.onload=function()
-{
-  result();
-}
-
-function result(){
-	alert("아이디나  비밀번호가 틀립니다. 다시 로그인해주세요");
-}
-</script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var message = "<c:out value='${message}' />";
+            if (message !== "") {
+                alert(message);
+            }
+        });
+    </script>
 </c:if>
+
+
+<body>
 
 <div class="login_form" style="margin-top: 40px;">
 	<div id="log_in">
@@ -115,6 +109,12 @@ function result(){
 	</div>
 </div>
 
+
+
+
+
+
+
 <script type="text/javascript">
 	function toggleForm(formType) {
 	    var memberForm = document.querySelector('.member');
@@ -135,5 +135,9 @@ function result(){
 	    }
 	}
 </script>
+
+
+
+
 </body>
 </html>

@@ -69,7 +69,7 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 		
 		System.out.println(loginMap + " : member컨트롤러에 들어온 ID,PW");
 		System.out.println(loginMap.toString() + " : toString으로 확인한 들어온 ID,PW");
-		System.out.println(loginMap.get("member_id") + " : 들어온 id확인");
+		System.out.println(loginMap.get("memberId") + " : 들어온 id확인");
 		ModelAndView mav = new ModelAndView();
 		// ModelAndView객체는 springMVC에서 사용되는 뷰와 데이터를 함게 처리하는 클래스
 		// 컨트롤러에서 데이터와 뷰 정보를 담아서 반환하여 클라이언트에게 전달
@@ -118,12 +118,12 @@ public class MemberControllerImpl extends BaseController implements MemberContro
 				// 			    로그인 후 메인 페이지로 리다이렉트하거나, 작업을 완료한 후 결과 페이지로 이동하는 경우에도 활용
 				
 			}
-			
-			
+	
 		// 로그인 실패시	
 		// 메세지를 담아서 로그인폼으로 돌아감.
 		}else{
 			String message="아이디나  비밀번호가 틀립니다. 다시 로그인해주세요";
+			System.out.println("적은 메시지 : " + message);
 			mav.addObject("message", message);
 			mav.setViewName("/member/loginForm");
 		}
