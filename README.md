@@ -24,12 +24,13 @@
 <br>
 
 <div align=left><h1>📹 시연 영상</h1></div>
-
-
+<br>
 <div align=left><h2>📹 메인페이지</h2>
 <video src="https://github.com/startcoriny/yegerina/assets/127919222/f51ec4d4-3a35-4905-b232-c1d1b2d9d224" />
 </div>
+<br>
 
+  
 <div align=left><h2>📹회원</h2>
   <div>
     <h4>로그인 / 로그아웃</h4>
@@ -38,12 +39,11 @@
   <div>
     <h4>회원가입</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/2ab3b3c6-9003-4080-8895-faa921107319" />
-  </div>
-    
+  </div>   
 </div>  
+<br>
 
-
-
+      
 <div align=left><h2>📹 상품</h2>
   <div>    
     <h4>자동완성 / 검색</h4>
@@ -58,8 +58,9 @@
     <video src="" />
   </div>
 </div>  
+<br>
 
-
+      
 <div align=left><h2>📹 상품주문</h2>
   <div>    
     <h4>장바구니</h4>
@@ -74,8 +75,9 @@
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/8687cd04-73cc-4c06-b846-5c16f1e7e562" />
   </div>
 </div>  
+<br>
 
-
+      
 <div align=left><h2>📹 마이페이지</h2>
   <div>    
     <h4>마이페이지</h4>
@@ -86,9 +88,10 @@
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/a624f2df-772f-440c-9c79-8cc92af0b030" />
   </div> 
 </div>  
+<br>
 
+      
 <div align=left><h2>📹 관리자상품</h2>
-
   <div>    
     <h4>관리자 상품조회</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/b0e64b93-dd1f-41f5-a709-26d3e0f35075" />
@@ -106,7 +109,9 @@
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/587960fc-ad80-4a61-96d3-7b5602ab6ac4" />
   </div>
 </div>  
-  
+<br>
+
+      
 <div align=left><h2>📹 관리자주문</h2>
   <div>    
     <h4>관리자 주문조회</h4>
@@ -117,7 +122,9 @@
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/6958f32e-fd62-4a6e-b951-f045627b9ed9" />
   </div>
 </div>  
+<br>
 
+      
 <div align=left><h2>📹 관리자회원</h2>
   <div>    
     <h4>관리자 회원조회</h4>
