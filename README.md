@@ -26,6 +26,6 @@
 
 <div align=center><h3>📹 메인페이지</h3></div>
 <div align=center> 
-  <img src="">  
+  <img src="https://github.com/startcoriny/yegerina/assets/127919222/f51ec4d4-3a35-4905-b232-c1d1b2d9d224">  
   
 </div>
