@@ -36,100 +36,111 @@
     <h4>로그인 / 로그아웃</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/51ddcc7e-3051-4a1e-9e90-adf53e44c23e" />
   </div>
+  <br>
   <div>
     <h4>회원가입</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/2ab3b3c6-9003-4080-8895-faa921107319" />
   </div>   
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 상품</h2>
   <div>    
     <h4>자동완성 / 검색</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/a214432c-106e-439e-ac44-258aa6a06d6b" />
   </div>
+  <br>
   <div>
     <h4>상품상세</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/837579fb-2e62-47b8-877e-d0e5a7a7ee73" />
   </div>
+  <br>
   <div>
     <h4>카테고리</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/6f3cef90-ba47-430b-82d6-d48312c66632" />
   </div>
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 상품주문</h2>
   <div>    
     <h4>장바구니</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/5e697138-9c5a-47c6-8e69-681ec3eec658" />
   </div>
+  <br>
   <div>
     <h4>개별주문하기</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/be12343f-9f52-44f2-8514-91c819d39006" />
   </div>
+  <br>
   <div>
     <h4>선택주문하기</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/8687cd04-73cc-4c06-b846-5c16f1e7e562" />
   </div>
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 마이페이지</h2>
   <div>    
     <h4>마이페이지</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/fffe705b-096e-44ba-8936-f61587f2e04c" />
   </div>
+  <br>
   <div>
     <h4>주문목록(취소/교환/반품)</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/a624f2df-772f-440c-9c79-8cc92af0b030" />
   </div> 
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 관리자상품</h2>
   <div>    
     <h4>관리자 상품조회</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/b0e64b93-dd1f-41f5-a709-26d3e0f35075" />
   </div>
+  <br>
   <div>
     <h4>관리자 상품추가</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/d45b3fde-8c78-4280-8065-29171d876142" />
   </div>
+  <br>
   <div>
     <h4>관리자 상품수정</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/c0cedd49-331c-4c75-b6dc-24f8f5cf75c4" />
   </div>
+  <br>
   <div>    
     <h4>관리자 상품삭제</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/587960fc-ad80-4a61-96d3-7b5602ab6ac4" />
   </div>
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 관리자주문</h2>
   <div>    
     <h4>관리자 주문조회</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/0363132e-0d68-4c80-9ac4-0ad7d2cb0214" />
   </div>
+  <br>
   <div>
     <h4>관리자 배송수정</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/6958f32e-fd62-4a6e-b951-f045627b9ed9" />
   </div>
 </div>  
 <br>
-
+<br>
       
 <div align=left><h2>📹 관리자회원</h2>
   <div>    
     <h4>관리자 회원조회</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/61cd589f-0b52-4889-90ee-825a0c0a0a8f" />
   </div>
+  <br>
   <div>
     <h4>관리자 회원탈퇴</h4>
     <video src="https://github.com/startcoriny/yegerina/assets/127919222/2a6a8ab5-5251-4291-b14b-f948ebd7003b" />
