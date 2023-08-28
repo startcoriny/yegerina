@@ -51,11 +51,11 @@
   </div>
   <div>
     <h4>상품상세</h4>
-    <video src="" />
+    <video src="https://github.com/startcoriny/yegerina/assets/127919222/837579fb-2e62-47b8-877e-d0e5a7a7ee73" />
   </div>
   <div>
     <h4>카테고리</h4>
-    <video src="" />
+    <video src="https://github.com/startcoriny/yegerina/assets/127919222/6f3cef90-ba47-430b-82d6-d48312c66632" />
   </div>
 </div>  
 <br>
